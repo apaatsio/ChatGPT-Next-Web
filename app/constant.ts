@@ -292,7 +292,7 @@ You are ChatGPT, a large language model trained by {{ServiceProvider}}.
 Knowledge cutoff: {{cutoff}}
 Current model: {{model}}
 Current time: {{time}}
-Latex inline: \\(x^2\\) 
+Latex inline: \\(x^2\\)
 Latex block: $$e=mc^2$$
 `;
 
@@ -323,7 +323,7 @@ You are an AI assistant with access to system tools. Your role is to help users 
       - Use markdown code blocks with format: \`\`\`json:mcp:{clientId}\`\`\`
       - Always include:
         * method: "tools/call"（Only this method is supported）
-        * params: 
+        * params:
           - name: must match an available primitive name
           - arguments: required parameters for the primitive
 
@@ -392,7 +392,7 @@ You are an AI assistant with access to system tools. Your role is to help users 
    \`\`\`
 
    This is wrong because the method is not tools/call.
-   
+
    \`\`\`{
   "method": "search_repositories",
   "params": {
@@ -415,9 +415,9 @@ You are an AI assistant with access to system tools. Your role is to help users 
      }
    }
    \`\`\`
-   
+
    please follow the format strictly ONLY use tools/call method!!!!!!!!!!!
-   
+
 `;
 
 export const SUMMARIZE_MODEL = "gpt-4o-mini";
@@ -500,39 +500,39 @@ export const EXCLUDE_VISION_MODEL_REGEXES = [/claude-3-5-haiku-20241022/];
 const openaiModels = [
   // As of July 2024, gpt-4o-mini should be used in place of gpt-3.5-turbo,
   // as it is cheaper, more capable, multimodal, and just as fast. gpt-3.5-turbo is still available for use in the API.
-  "gpt-3.5-turbo",
-  "gpt-3.5-turbo-1106",
-  "gpt-3.5-turbo-0125",
-  "gpt-4",
-  "gpt-4-0613",
-  "gpt-4-32k",
-  "gpt-4-32k-0613",
-  "gpt-4-turbo",
-  "gpt-4-turbo-preview",
+  // "gpt-3.5-turbo",
+  // "gpt-3.5-turbo-1106",
+  // "gpt-3.5-turbo-0125",
+  // "gpt-4",
+  // "gpt-4-0613",
+  // "gpt-4-32k",
+  // "gpt-4-32k-0613",
+  // "gpt-4-turbo",
+  // "gpt-4-turbo-preview",
   "gpt-4.1",
-  "gpt-4.1-2025-04-14",
+  // "gpt-4.1-2025-04-14",
   "gpt-4.1-mini",
-  "gpt-4.1-mini-2025-04-14",
+  // "gpt-4.1-mini-2025-04-14",
   "gpt-4.1-nano",
-  "gpt-4.1-nano-2025-04-14",
+  // "gpt-4.1-nano-2025-04-14",
   "gpt-4.5-preview",
-  "gpt-4.5-preview-2025-02-27",
+  // "gpt-4.5-preview-2025-02-27",
   "gpt-4o",
-  "gpt-4o-2024-05-13",
-  "gpt-4o-2024-08-06",
-  "gpt-4o-2024-11-20",
-  "chatgpt-4o-latest",
+  // "gpt-4o-2024-05-13",
+  // "gpt-4o-2024-08-06",
+  // "gpt-4o-2024-11-20",
+  // "chatgpt-4o-latest",
   "gpt-4o-mini",
-  "gpt-4o-mini-2024-07-18",
-  "gpt-4-vision-preview",
-  "gpt-4-turbo-2024-04-09",
-  "gpt-4-1106-preview",
-  "dall-e-3",
-  "o1-mini",
-  "o1-preview",
-  "o3-mini",
-  "o3",
-  "o4-mini",
+  // "gpt-4o-mini-2024-07-18",
+  // "gpt-4-vision-preview",
+  // "gpt-4-turbo-2024-04-09",
+  // "gpt-4-1106-preview",
+  // "dall-e-3",
+  // "o1-mini",
+  // "o1-preview",
+  // "o3-mini",
+  // "o3",
+  // "o4-mini",
 ];
 
 const googleModels = [
@@ -559,19 +559,19 @@ const googleModels = [
 ];
 
 const anthropicModels = [
-  "claude-instant-1.2",
-  "claude-2.0",
-  "claude-2.1",
-  "claude-3-sonnet-20240229",
-  "claude-3-opus-20240229",
-  "claude-3-opus-latest",
-  "claude-3-haiku-20240307",
-  "claude-3-5-haiku-20241022",
-  "claude-3-5-haiku-latest",
-  "claude-3-5-sonnet-20240620",
-  "claude-3-5-sonnet-20241022",
-  "claude-3-5-sonnet-latest",
-  "claude-3-7-sonnet-20250219",
+  // "claude-instant-1.2",
+  // "claude-2.0",
+  // "claude-2.1",
+  // "claude-3-sonnet-20240229",
+  // "claude-3-opus-20240229",
+  // "claude-3-opus-latest",
+  // "claude-3-haiku-20240307",
+  // "claude-3-5-haiku-20241022",
+  // "claude-3-5-haiku-latest",
+  // "claude-3-5-sonnet-20240620",
+  // "claude-3-5-sonnet-20241022",
+  // "claude-3-5-sonnet-latest",
+  // "claude-3-7-sonnet-20250219",
   "claude-3-7-sonnet-latest",
   "claude-sonnet-4-20250514",
   "claude-opus-4-20250514",
@@ -898,7 +898,7 @@ export const DEFAULT_MODELS = [
       sorted: 15,
     },
   })),
-] as const;
+].filter(({ provider }) => ["openai", "anthropic"].includes(provider.id));
 
 export const CHAT_PAGE_SIZE = 15;
 export const MAX_RENDER_MSG_COUNT = 45;
