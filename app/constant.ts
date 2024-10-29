@@ -261,7 +261,7 @@ You are ChatGPT, a large language model trained by {{ServiceProvider}}.
 Knowledge cutoff: {{cutoff}}
 Current model: {{model}}
 Current time: {{time}}
-Latex inline: \\(x^2\\) 
+Latex inline: \\(x^2\\)
 Latex block: $$e=mc^2$$
 `;
 
@@ -323,28 +323,28 @@ export const VISION_MODEL_REGEXES = [
 export const EXCLUDE_VISION_MODEL_REGEXES = [/claude-3-5-haiku-20241022/];
 
 const openaiModels = [
-  "gpt-3.5-turbo",
-  "gpt-3.5-turbo-1106",
-  "gpt-3.5-turbo-0125",
-  "gpt-4",
-  "gpt-4-0613",
-  "gpt-4-32k",
-  "gpt-4-32k-0613",
-  "gpt-4-turbo",
-  "gpt-4-turbo-preview",
-  "gpt-4o",
-  "gpt-4o-2024-05-13",
-  "gpt-4o-2024-08-06",
-  "gpt-4o-2024-11-20",
+  // "gpt-3.5-turbo",
+  // "gpt-3.5-turbo-1106",
+  // "gpt-3.5-turbo-0125",
+  // "gpt-4",
+  // "gpt-4-0613",
+  // "gpt-4-32k",
+  // "gpt-4-32k-0613",
+  // "gpt-4-turbo",
+  // "gpt-4-turbo-preview",
+  // "gpt-4o",
+  // "gpt-4o-2024-05-13",
+  // "gpt-4o-2024-08-06",
+  // "gpt-4o-2024-11-20",
   "chatgpt-4o-latest",
   "gpt-4o-mini",
-  "gpt-4o-mini-2024-07-18",
-  "gpt-4-vision-preview",
-  "gpt-4-turbo-2024-04-09",
-  "gpt-4-1106-preview",
-  "dall-e-3",
-  "o1-mini",
-  "o1-preview",
+  // "gpt-4o-mini-2024-07-18",
+  // "gpt-4-vision-preview",
+  // "gpt-4-turbo-2024-04-09",
+  // "gpt-4-1106-preview",
+  // "dall-e-3",
+  // "o1-mini",
+  // "o1-preview",
 ];
 
 const googleModels = [
@@ -368,17 +368,17 @@ const googleModels = [
 ];
 
 const anthropicModels = [
-  "claude-instant-1.2",
-  "claude-2.0",
-  "claude-2.1",
-  "claude-3-sonnet-20240229",
-  "claude-3-opus-20240229",
-  "claude-3-opus-latest",
-  "claude-3-haiku-20240307",
-  "claude-3-5-haiku-20241022",
-  "claude-3-5-haiku-latest",
-  "claude-3-5-sonnet-20240620",
-  "claude-3-5-sonnet-20241022",
+  // "claude-instant-1.2",
+  // "claude-2.0",
+  // "claude-2.1",
+  // "claude-3-sonnet-20240229",
+  // "claude-3-opus-20240229",
+  // "claude-3-opus-latest",
+  // "claude-3-haiku-20240307",
+  // "claude-3-5-haiku-20241022",
+  // "claude-3-5-haiku-latest",
+  // "claude-3-5-sonnet-20240620",
+  // "claude-3-5-sonnet-20241022",
   "claude-3-5-sonnet-latest",
 ];
 
@@ -604,7 +604,7 @@ export const DEFAULT_MODELS = [
       sorted: 13,
     },
   })),
-] as const;
+].filter(({ provider }) => ["openai", "anthropic"].includes(provider.id));
 
 export const CHAT_PAGE_SIZE = 15;
 export const MAX_RENDER_MSG_COUNT = 45;
